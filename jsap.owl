@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/elisariforgiato/0.4.5./jsapowl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/elisariforgiato/0.4.5./jsapowl">
+    <Prefix name="" IRI="http://www.semanticweb.org/elisariforgiato/0.4.5./jsapowl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#jsap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#extended"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#graphs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#host"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#namespaces"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#oauth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql11seprotocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasForcedBindings"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasQuery"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#hasUpdate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindingsName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#port"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#protocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#queriesName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#reconnect"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#type"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#value"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#enable"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#format"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#method"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#path"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updatesName"/>
+    </Declaration>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#hasUpdate"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasForcedBindings"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasForcedBindings"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasQuery"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#jsap"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#hasUpdate"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasForcedBindings"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindings"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasQuery"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#extended"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#graphs"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#host"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#namespaces"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#oauth"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql11seprotocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+            <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#madeBy"/>
+            <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#hasUpdate"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindingsName"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#port"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#protocol"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#protocol"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql11seprotocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#queriesName"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#reconnect"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql11seprotocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#type"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#value"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#enable"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#oauth"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#format"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#format"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#method"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#method"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#path"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#path"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updatesName"/>
+        <Class IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#forcedBindingsName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#port"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#protocol"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#queriesName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#reconnect"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#type"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#value"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#enable"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#format"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#method"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#path"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updatesName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
