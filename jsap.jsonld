@@ -1,0 +1,115 @@
+{
+  "@context" : {
+    "queries" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"
+    },
+    "forcedBindings" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#forcedBindings"
+    },
+    "sparql" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "reconnect" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#reconnect",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "protocol" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#protocol",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "graphs" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#graphs"
+    },
+    "extended" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#extended"
+    },
+    "host" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#host"
+    },
+    "updates" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"
+    },
+    "jsap" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#jsap"
+    },
+    "method" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#method",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "query" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"
+    },
+    "hasUpdate" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#hasUpdate",
+      "@type" : "@id"
+    },
+    "path" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#path",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasForcedBindings" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#hasForcedBindings",
+      "@type" : "@id"
+    },
+    "enable" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#enable",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "update" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "queriesName" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#queriesName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "value" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#value",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparql11seprotocol" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql11seprotocol"
+    },
+    "updatesName" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updatesName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "port" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#port",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "sparq11protocol" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"
+    },
+    "type" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#type",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "oauth" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#oauth"
+    },
+    "namespaces" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#namespaces"
+    },
+    "forcedBindingsName" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#forcedBindingsName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "madeBy" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#madeBy",
+      "@type" : "@id"
+    },
+    "format" : {
+      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#format",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasQuery" : {
+      "@id" : "http://www.co-ode.org/ontologies/ont.owl#hasQuery",
+      "@type" : "@id"
+    }
+  }
+}
