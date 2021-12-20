@@ -1,0 +1,353 @@
+{
+"@context" : [
+     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",{
+    "queries" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#queries"
+    },
+    "forcedBindings" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindings"
+    },
+    "hasAviaibleProtocols" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasAviaibleProtocols",
+      "@type" : "@id"
+    },
+    "sparql" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "reconnect" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#reconnect",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "protocol" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#protocol",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "graphs" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#graphs"
+    },
+    "forceBindingType" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#forceBindingType",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "extended" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#extended"
+    },
+    "host" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#host"
+    },
+    "updates" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#updates"
+    },
+    "jsap" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#jsap"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "method" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#method",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "query" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#query"
+    },
+    "hasUpdate" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasUpdate",
+      "@type" : "@id"
+    },
+    "path" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#path",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasForcedBindings" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasForcedBindings",
+      "@type" : "@id"
+    },
+    "enable" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#enable",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "update" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#update"
+    },
+    "aviaibleProtocols" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#aviaibleProtocols"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "queriesName" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#queriesName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "value" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#value",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparql11seprotocol" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11seprotocol"
+    },
+    "updatesName" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#updatesName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "port" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#port",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "sparq11protocol" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol"
+    },
+    "oauth" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#oauth"
+    },
+    "namespaces" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#namespaces"
+    },
+    "wss" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#wss"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "forcedBindingsName" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindingsName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ws" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#ws"
+    },
+    "madeBy" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#madeBy",
+      "@type" : "@id"
+    },
+    "format" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#format",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasQuery" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasQuery",
+      "@type" : "@id"
+    }
+  }],
+"@id":"example_chat",
+"@type": "jsap",
+"host": "localhost",
+"oauth": {
+		"enable": false
+	},
+"sparql11protocol": {
+		"protocol": "http",
+		"port": 8000,
+		"query": {
+			"path": "/query",
+			"method": "POST",
+			"format": "JSON"
+		},
+		"update": {
+			"path": "/update",
+			"method": "POST",
+			"format": "JSON"
+		}
+	},
+"extended": {
+        "extendedType": "base",
+		"base": 0,
+		"clients": 2,
+		"messages": 5
+	},
+	"graphs": {
+		"default-graph-uri": [
+			"http://wot.arces.unibo.it/chat"
+		],
+		"using-graph-uri": [
+			"http://wot.arces.unibo.it/chat"
+		]
+	},
+	"namespaces": {
+		"schema": "http://schema.org/",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"chat": "http://wot.arces.unibo.it/chat#"
+	},
+	"updates": [
+		{
+            "updatesName":"SEND",
+			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
+			"forcedBindings": [
+                 {
+                    "forcedBindingName" :"text",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "Ciao!"
+				},
+                 {
+                    "forcedBindingName" :"sender",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IamASender"
+				},
+                {
+                    "forcedBindingName" :"receiver",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IamAReceiver"
+				}
+            ]
+		},
+		{
+            "updatesName":"SET_RECEIVED",
+			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {?message schema:dateReceived ?time}} WHERE {?message rdf:type schema:Message ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?sentTime .  BIND(STR(now()) AS ?time)}",
+			"forcedBindings": [
+                 {
+                    "forcedBindingName" :"sender",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IamASender"
+				},
+                {
+                    "forcedBindingName" :"receiver",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IamAReceiver"
+				},
+                {
+                    "forcedBindingName" :"sentTime",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "2018-06-28T00:00:00"
+				}
+            ]
+		},
+        {
+            "updatesName":"REMOVE",
+			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?message ?p ?o}} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}",
+			"forcedBindings": [
+                 {
+                    "forcedBindingName" :"sender",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IamASender"
+				},
+                 {
+                    "forcedBindingName" :"time",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "2018-06-28T00:00:00"
+				}
+            ]
+		},
+        {
+            "updatesName":"STORE_SENT",
+			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}}",
+			"forcedBindings": [
+                 {
+                    "forcedBindingName" :"dateSent",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "2018-06-28T00:00:00",
+					"datatype": "xsd:dateTime"
+				},
+                 {
+                    "forcedBindingName" :"message",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:ThisIsAMessage"
+				},
+                {
+                    "forcedBindingName" :"text",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "A message to be stored"
+				},
+                 {
+                    "forcedBindingName" :"sender",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IAmASender"
+				},
+                {
+                    "forcedBindingName" :"receiver",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IAmAReceiver"
+				}
+            ]
+		},
+         {
+            "updatesName":"STORE_RECEIVED",
+			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:dateReceived ?dateReceived}}",
+			"forcedBindings": [
+                {
+                    "forcedBindingName" :"dateReceived",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "2018-06-28T00:00:00",
+					"datatype": "xsd:dateTime"
+				},
+                 {
+                    "forcedBindingName" :"message",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:ThisIsAMessage"
+				}
+            ]
+		},
+         {
+            "updatesName":"REGISTER_USER",
+			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?x rdf:type schema:Person . ?x schema:name ?userName}} INSERT {graph <http://wot.arces.unibo.it/chat> {?user rdf:type schema:Person ; schema:name ?userName}}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}",
+			"forcedBindings": [
+                {
+                    "forcedBindingName" :"userName",
+					"forcedBindingType": "literal",
+					"forcedBindingValue": "My user name"
+				},
+                 {
+                    "forcedBindingName" :"user",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "http://wot.arces.unibo.it/chat/user/XYZ"
+				}
+            ]
+		},
+        {
+            "updatesName":"DELETE_ALL",
+			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?s ?p ?o}} WHERE {?s ?p ?o}"
+		}
+    ],
+	"queries": [
+        { 
+            "queriesName":"SENT",
+			"sparql": "SELECT ?message ?sender ?name ?text ?time WHERE {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?time . ?sender rdf:type schema:Person ; schema:name ?name . ?receiver rdf:type schema:Person} ORDER BY ?time",
+			"forcedBindings": [
+                {
+                    "forcedBindingName" :"receiver",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IAmAReceiver"
+				}
+            ]
+		},
+        {
+            "queriesName":"RECEIVED",
+			"sparql": "SELECT ?message ?time WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message}",
+			"forcedBindings": [
+				{
+                    "forcedBindingName" :"sender",
+					"forcedBindingType": "uri",
+					"forcedBindingValue": "chat:IAmASender"
+				}
+            ]
+		},
+         {
+            "queriesName":"LOG_SENT",
+			"sparql": "SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}",
+			"graphs": {
+				"default-graph-uri": [
+					"http://wot.arces.unibo.it/chat/log"
+				]
+			}
+		},
+        {
+            "queriesName":"LOG_RECEIVED",
+			"sparql": "SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}",
+			"graphs": {
+				"default-graph-uri": [
+					"http://wot.arces.unibo.it/chat/log"
+				]
+			}
+		},
+         {
+            "queriesName":"USERS",
+			"sparql": "SELECT ?user ?userName WHERE {?user rdf:type schema:Person ; schema:name ?userName}"
+		},
+         {
+            "queriesName":"QUERY_ALL",
+			"sparql": "SELECT * WHERE {?s ?p ?o}"
+		}
+    ]
+}

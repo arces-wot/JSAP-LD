@@ -1,114 +1,133 @@
 {
   "@context" : {
     "queries" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#queries"
+      "@id" : "http://www.vaimee.it/ontology/jsap#queries"
     },
     "forcedBindings" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#forcedBindings"
+      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindings"
+    },
+    "hasAviaibleProtocols" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasAviaibleProtocols",
+      "@type" : "@id"
     },
     "sparql" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql",
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "reconnect" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#reconnect",
+      "@id" : "http://www.vaimee.it/ontology/jsap#reconnect",
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "protocol" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#protocol",
+      "@id" : "http://www.vaimee.it/ontology/jsap#protocol",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "graphs" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#graphs"
+      "@id" : "http://www.vaimee.it/ontology/jsap#graphs"
+    },
+    "forceBindingType" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#forceBindingType",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "extended" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#extended"
+      "@id" : "http://www.vaimee.it/ontology/jsap#extended"
     },
     "host" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#host"
+      "@id" : "http://www.vaimee.it/ontology/jsap#host"
     },
     "updates" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updates"
+      "@id" : "http://www.vaimee.it/ontology/jsap#updates"
     },
     "jsap" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#jsap"
+      "@id" : "http://www.vaimee.it/ontology/jsap#jsap"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
     "method" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#method",
+      "@id" : "http://www.vaimee.it/ontology/jsap#method",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "query" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#query"
+      "@id" : "http://www.vaimee.it/ontology/jsap#query"
     },
     "hasUpdate" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#hasUpdate",
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasUpdate",
       "@type" : "@id"
     },
     "path" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#path",
+      "@id" : "http://www.vaimee.it/ontology/jsap#path",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasForcedBindings" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#hasForcedBindings",
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasForcedBindings",
       "@type" : "@id"
     },
     "enable" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#enable",
+      "@id" : "http://www.vaimee.it/ontology/jsap#enable",
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
     },
     "update" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#update"
+      "@id" : "http://www.vaimee.it/ontology/jsap#update"
+    },
+    "aviaibleProtocols" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#aviaibleProtocols"
     },
     "topObjectProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
       "@type" : "@id"
     },
     "queriesName" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#queriesName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "value" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#value",
+      "@id" : "http://www.vaimee.it/ontology/jsap#queriesName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "sparql11seprotocol" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparql11seprotocol"
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11seprotocol"
     },
     "updatesName" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#updatesName",
+      "@id" : "http://www.vaimee.it/ontology/jsap#updatesName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "port" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#port",
+      "@id" : "http://www.vaimee.it/ontology/jsap#port",
       "@type" : "http://www.w3.org/2001/XMLSchema#int"
     },
     "sparq11protocol" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#sparq11protocol"
-    },
-    "type" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#type",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol"
     },
     "oauth" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#oauth"
+      "@id" : "http://www.vaimee.it/ontology/jsap#oauth"
     },
     "namespaces" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#namespaces"
+      "@id" : "http://www.vaimee.it/ontology/jsap#namespaces"
+    },
+    "wss" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#wss"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
     "forcedBindingsName" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#forcedBindingsName",
+      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindingsName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "forceBindingValue" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#forceBindingValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ws" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#ws"
+    },
     "madeBy" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#madeBy",
+      "@id" : "http://www.vaimee.it/ontology/jsap#madeBy",
       "@type" : "@id"
     },
     "format" : {
-      "@id" : "http://www.semanticweb.org/elisariforgiato/ontologies/jsapowl#format",
+      "@id" : "http://www.vaimee.it/ontology/jsap#format",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasQuery" : {
-      "@id" : "http://www.co-ode.org/ontologies/ont.owl#hasQuery",
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasQuery",
       "@type" : "@id"
     }
   }

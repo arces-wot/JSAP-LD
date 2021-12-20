@@ -1,0 +1,149 @@
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#extended> _:b0 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#graphs> _:b1 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#host> "localhost" .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#namespaces> _:b2 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#oauth> _:b3 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#queries> _:b10 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#queries> _:b12 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#queries> _:b13 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#queries> _:b4 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#queries> _:b6 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#queries> _:b8 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b14 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b18 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b22 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b25 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b31 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b34 .
+<https://json-ld.org/playground/example_chat> <http://www.vaimee.it/ontology/jsap#updates> _:b37 .
+<https://json-ld.org/playground/example_chat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.vaimee.it/ontology/jsap#jsap> .
+<https://json-ld.org/playground/example_chat> <https://uri.etsi.org/ngsi-ld/default-context/sparql11protocol> _:b38 .
+_:b0 <https://uri.etsi.org/ngsi-ld/default-context/base> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:b0 <https://uri.etsi.org/ngsi-ld/default-context/clients> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:b0 <https://uri.etsi.org/ngsi-ld/default-context/extendedType> "base" .
+_:b0 <https://uri.etsi.org/ngsi-ld/default-context/messages> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:b1 <https://uri.etsi.org/ngsi-ld/default-context/default-graph-uri> "http://wot.arces.unibo.it/chat" .
+_:b1 <https://uri.etsi.org/ngsi-ld/default-context/using-graph-uri> "http://wot.arces.unibo.it/chat" .
+_:b10 <http://www.vaimee.it/ontology/jsap#graphs> _:b11 .
+_:b10 <http://www.vaimee.it/ontology/jsap#queriesName> "LOG_RECEIVED" .
+_:b10 <http://www.vaimee.it/ontology/jsap#sparql> "SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}" .
+_:b11 <https://uri.etsi.org/ngsi-ld/default-context/default-graph-uri> "http://wot.arces.unibo.it/chat/log" .
+_:b12 <http://www.vaimee.it/ontology/jsap#queriesName> "USERS" .
+_:b12 <http://www.vaimee.it/ontology/jsap#sparql> "SELECT ?user ?userName WHERE {?user rdf:type schema:Person ; schema:name ?userName}" .
+_:b13 <http://www.vaimee.it/ontology/jsap#queriesName> "QUERY_ALL" .
+_:b13 <http://www.vaimee.it/ontology/jsap#sparql> "SELECT * WHERE {?s ?p ?o}" .
+_:b14 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b15 .
+_:b14 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b16 .
+_:b14 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b17 .
+_:b14 <http://www.vaimee.it/ontology/jsap#sparql> "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}" .
+_:b14 <http://www.vaimee.it/ontology/jsap#updatesName> "SEND" .
+_:b15 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "text" .
+_:b15 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b15 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "Ciao!" .
+_:b16 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "sender" .
+_:b16 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b16 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IamASender" .
+_:b17 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "receiver" .
+_:b17 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b17 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IamAReceiver" .
+_:b18 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b19 .
+_:b18 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b20 .
+_:b18 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b21 .
+_:b18 <http://www.vaimee.it/ontology/jsap#sparql> "INSERT {graph <http://wot.arces.unibo.it/chat> {?message schema:dateReceived ?time}} WHERE {?message rdf:type schema:Message ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?sentTime .  BIND(STR(now()) AS ?time)}" .
+_:b18 <http://www.vaimee.it/ontology/jsap#updatesName> "SET_RECEIVED" .
+_:b19 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "sender" .
+_:b19 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b19 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IamASender" .
+_:b2 <https://uri.etsi.org/ngsi-ld/default-context/chat> "http://wot.arces.unibo.it/chat#" .
+_:b2 <https://uri.etsi.org/ngsi-ld/default-context/rdf> "http://www.w3.org/1999/02/22-rdf-syntax-ns#" .
+_:b2 <https://uri.etsi.org/ngsi-ld/default-context/schema> "http://schema.org/" .
+_:b20 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "receiver" .
+_:b20 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b20 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IamAReceiver" .
+_:b21 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "sentTime" .
+_:b21 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b21 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "2018-06-28T00:00:00" .
+_:b22 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b23 .
+_:b22 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b24 .
+_:b22 <http://www.vaimee.it/ontology/jsap#sparql> "DELETE {graph <http://wot.arces.unibo.it/chat> {?message ?p ?o}} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}" .
+_:b22 <http://www.vaimee.it/ontology/jsap#updatesName> "REMOVE" .
+_:b23 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "sender" .
+_:b23 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b23 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IamASender" .
+_:b24 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "time" .
+_:b24 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b24 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "2018-06-28T00:00:00" .
+_:b25 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b26 .
+_:b25 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b27 .
+_:b25 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b28 .
+_:b25 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b29 .
+_:b25 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b30 .
+_:b25 <http://www.vaimee.it/ontology/jsap#sparql> "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}}" .
+_:b25 <http://www.vaimee.it/ontology/jsap#updatesName> "STORE_SENT" .
+_:b26 <https://uri.etsi.org/ngsi-ld/default-context/datatype> "xsd:dateTime" .
+_:b26 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "dateSent" .
+_:b26 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b26 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "2018-06-28T00:00:00" .
+_:b27 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "message" .
+_:b27 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b27 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:ThisIsAMessage" .
+_:b28 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "text" .
+_:b28 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b28 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "A message to be stored" .
+_:b29 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "sender" .
+_:b29 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b29 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IAmASender" .
+_:b3 <http://www.vaimee.it/ontology/jsap#enable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:b30 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "receiver" .
+_:b30 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b30 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IAmAReceiver" .
+_:b31 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b32 .
+_:b31 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b33 .
+_:b31 <http://www.vaimee.it/ontology/jsap#sparql> "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:dateReceived ?dateReceived}}" .
+_:b31 <http://www.vaimee.it/ontology/jsap#updatesName> "STORE_RECEIVED" .
+_:b32 <https://uri.etsi.org/ngsi-ld/default-context/datatype> "xsd:dateTime" .
+_:b32 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "dateReceived" .
+_:b32 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b32 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "2018-06-28T00:00:00" .
+_:b33 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "message" .
+_:b33 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b33 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:ThisIsAMessage" .
+_:b34 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b35 .
+_:b34 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b36 .
+_:b34 <http://www.vaimee.it/ontology/jsap#sparql> "DELETE {graph <http://wot.arces.unibo.it/chat> {?x rdf:type schema:Person . ?x schema:name ?userName}} INSERT {graph <http://wot.arces.unibo.it/chat> {?user rdf:type schema:Person ; schema:name ?userName}}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}" .
+_:b34 <http://www.vaimee.it/ontology/jsap#updatesName> "REGISTER_USER" .
+_:b35 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "userName" .
+_:b35 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "literal" .
+_:b35 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "My user name" .
+_:b36 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "user" .
+_:b36 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b36 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "http://wot.arces.unibo.it/chat/user/XYZ" .
+_:b37 <http://www.vaimee.it/ontology/jsap#sparql> "DELETE {graph <http://wot.arces.unibo.it/chat> {?s ?p ?o}} WHERE {?s ?p ?o}" .
+_:b37 <http://www.vaimee.it/ontology/jsap#updatesName> "DELETE_ALL" .
+_:b38 <http://www.vaimee.it/ontology/jsap#port> "8000"^^<http://www.w3.org/2001/XMLSchema#int> .
+_:b38 <http://www.vaimee.it/ontology/jsap#protocol> "http" .
+_:b38 <http://www.vaimee.it/ontology/jsap#query> _:b39 .
+_:b38 <http://www.vaimee.it/ontology/jsap#update> _:b40 .
+_:b39 <http://www.vaimee.it/ontology/jsap#format> "JSON" .
+_:b39 <http://www.vaimee.it/ontology/jsap#method> "POST" .
+_:b39 <http://www.vaimee.it/ontology/jsap#path> "/query" .
+_:b4 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b5 .
+_:b4 <http://www.vaimee.it/ontology/jsap#queriesName> "SENT" .
+_:b4 <http://www.vaimee.it/ontology/jsap#sparql> "SELECT ?message ?sender ?name ?text ?time WHERE {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?time . ?sender rdf:type schema:Person ; schema:name ?name . ?receiver rdf:type schema:Person} ORDER BY ?time" .
+_:b40 <http://www.vaimee.it/ontology/jsap#format> "JSON" .
+_:b40 <http://www.vaimee.it/ontology/jsap#method> "POST" .
+_:b40 <http://www.vaimee.it/ontology/jsap#path> "/update" .
+_:b5 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "receiver" .
+_:b5 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b5 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IAmAReceiver" .
+_:b6 <http://www.vaimee.it/ontology/jsap#forcedBindings> _:b7 .
+_:b6 <http://www.vaimee.it/ontology/jsap#queriesName> "RECEIVED" .
+_:b6 <http://www.vaimee.it/ontology/jsap#sparql> "SELECT ?message ?time WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message}" .
+_:b7 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingName> "sender" .
+_:b7 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingType> "uri" .
+_:b7 <https://uri.etsi.org/ngsi-ld/default-context/forcedBindingValue> "chat:IAmASender" .
+_:b8 <http://www.vaimee.it/ontology/jsap#graphs> _:b9 .
+_:b8 <http://www.vaimee.it/ontology/jsap#queriesName> "LOG_SENT" .
+_:b8 <http://www.vaimee.it/ontology/jsap#sparql> "SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}" .
+_:b9 <https://uri.etsi.org/ngsi-ld/default-context/default-graph-uri> "http://wot.arces.unibo.it/chat/log" .
+
