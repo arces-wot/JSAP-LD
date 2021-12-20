@@ -80,13 +80,13 @@
         <DataProperty IRI="#enable"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#forceBindingType"/>
+        <DataProperty IRI="#forcedBindingName"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#forceBindingValue"/>
+        <DataProperty IRI="#forcedBindingType"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#forcedBindingsName"/>
+        <DataProperty IRI="#forcedBindingValue"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#format"/>
@@ -214,15 +214,15 @@
         <Class IRI="#oauth"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#forceBindingType"/>
+        <DataProperty IRI="#forcedBindingName"/>
         <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#forceBindingValue"/>
+        <DataProperty IRI="#forcedBindingType"/>
         <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#forcedBindingsName"/>
+        <DataProperty IRI="#forcedBindingValue"/>
         <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -294,15 +294,15 @@
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#forceBindingType"/>
+        <DataProperty IRI="#forcedBindingName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#forceBindingValue"/>
+        <DataProperty IRI="#forcedBindingType"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#forcedBindingsName"/>
+        <DataProperty IRI="#forcedBindingValue"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -368,12 +368,17 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#forceBindingType</IRI>
+        <IRI>#forcedBindingName</IRI>
+        <Literal xml:lang="en">Name of a forced binding.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forcedBindingType</IRI>
         <Literal xml:lang="en">Force binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#forceBindingValue</IRI>
+        <IRI>#forcedBindingValue</IRI>
         <Literal xml:lang="en">Forced binding value. It is optional and should be used to specify a default value for that variable.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -385,11 +390,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#forcedBindings</IRI>
         <Literal xml:lang="en">Forced binding</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#forcedBindingsName</IRI>
-        <Literal xml:lang="en">Name of a forced binding.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
