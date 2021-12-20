@@ -83,6 +83,9 @@
         <DataProperty IRI="#forceBindingType"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#forceBindingValue"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#forcedBindingsName"/>
     </Declaration>
     <Declaration>
@@ -111,9 +114,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#updatesName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#value"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#ws"/>
@@ -218,6 +218,10 @@
         <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#forceBindingValue"/>
+        <Class IRI="#forcedBindings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#forcedBindingsName"/>
         <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
@@ -285,16 +289,16 @@
         <DataProperty IRI="#updatesName"/>
         <Class IRI="#updates"/>
     </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#value"/>
-        <Class IRI="#forcedBindings"/>
-    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#enable"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#forceBindingType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#forceBindingValue"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -337,10 +341,6 @@
         <DataProperty IRI="#updatesName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#value"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#aviaibleProtocols</IRI>
@@ -370,6 +370,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#forceBindingType</IRI>
         <Literal xml:lang="en">Force binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forceBindingValue</IRI>
+        <Literal xml:lang="en">Forced binding value. It is optional and should be used to specify a default value for that variable.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -535,11 +540,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#updatesName</IRI>
         <Literal xml:lang="en">It stays for the specific update name in an update list.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#value</IRI>
-        <Literal xml:lang="en">Forced binding value. It is optional and should be used to specify a default value for that variable.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
