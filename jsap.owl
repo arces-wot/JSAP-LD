@@ -80,6 +80,9 @@
         <DataProperty IRI="#enable"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#forceBindingType"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#forcedBindingsName"/>
     </Declaration>
     <Declaration>
@@ -105,9 +108,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#sparql"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#type"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#updatesName"/>
@@ -214,6 +214,10 @@
         <Class IRI="#oauth"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#forceBindingType"/>
+        <Class IRI="#forcedBindings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#forcedBindingsName"/>
         <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
@@ -278,10 +282,6 @@
         <Class IRI="#updates"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#type"/>
-        <Class IRI="#forcedBindings"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#updatesName"/>
         <Class IRI="#updates"/>
     </DataPropertyDomain>
@@ -292,6 +292,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#enable"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#forceBindingType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#forcedBindingsName"/>
@@ -330,10 +334,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#type"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#updatesName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -365,6 +365,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#extended</IRI>
         <Literal xml:lang="en">Extended</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forceBindingType</IRI>
+        <Literal xml:lang="en">Force binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -505,11 +510,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#sparql11seprotocol</IRI>
         <Literal xml:lang="en">SPARQL 1,1 Secure Event Protocol</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#type</IRI>
-        <Literal xml:lang="en">Force binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
