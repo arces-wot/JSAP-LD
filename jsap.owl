@@ -7,12 +7,15 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.vaimee.it/ontology/jsap"
      versionIRI="http://www.vaimee.it/ontology/jsap/1.0">
-    <Prefix name="" IRI="http://www.semanticweb.org/elisariforgiato/0.4.5./jsapowl"/>
+    <Prefix name="" IRI="http://www.vaimee.it/ontology/jsap"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#aviaibleProtocols"/>
+    </Declaration>
     <Declaration>
         <Class IRI="#extended"/>
     </Declaration>
@@ -51,6 +54,15 @@
     </Declaration>
     <Declaration>
         <Class IRI="#updates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ws"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wss"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAviaibleProtocols"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasForcedBindings"/>
@@ -103,10 +115,22 @@
     <Declaration>
         <DataProperty IRI="#value"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#ws"/>
+        <Class IRI="#aviaibleProtocols"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#wss"/>
+        <Class IRI="#aviaibleProtocols"/>
+    </SubClassOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasUpdate"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAviaibleProtocols"/>
+        <Class IRI="#sparql11seprotocol"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasForcedBindings"/>
         <Class IRI="#queries"/>
@@ -127,6 +151,10 @@
         <ObjectProperty IRI="#madeBy"/>
         <Class IRI="#jsap"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAviaibleProtocols"/>
+        <Class IRI="#aviaibleProtocols"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasForcedBindings"/>
         <Class IRI="#forcedBindings"/>
@@ -207,6 +235,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#path"/>
+        <Class IRI="#aviaibleProtocols"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#path"/>
         <Class IRI="#query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -216,6 +248,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#port"/>
         <Class IRI="#sparq11protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#port"/>
+        <Class IRI="#sparql11seprotocol"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#protocol"/>
@@ -305,6 +341,206 @@
         <DataProperty IRI="#value"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#aviaibleProtocols</IRI>
+        <Literal xml:lang="en">It defines the aviaible protocols for a SPARQL 1.1 SE Protocol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#aviaibleProtocols</IRI>
+        <Literal xml:lang="en">Avaiaible Protocols</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#enable</IRI>
+        <Literal xml:lang="en">it is used for the oauth member enabling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#extended</IRI>
+        <Literal xml:lang="en">The extended member is optional and it may be used to store application specifica data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#extended</IRI>
+        <Literal xml:lang="en">Extended</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forcedBindings</IRI>
+        <Literal xml:lang="en">A forced binding enables the developer to substitute at run-time a variable in a template with a custom value.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#forcedBindings</IRI>
+        <Literal xml:lang="en">Forced binding</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#forcedBindingsName</IRI>
+        <Literal xml:lang="en">Name of a forced binding.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#format</IRI>
+        <Literal xml:lang="en">It expresses the format of the response. All the SEPA implementations must support JSON as return format, while other formats like XML,CSV or HTML may be supported.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#graphs</IRI>
+        <Literal xml:lang="en">The graphs member may be used to specify zero or more default graph URIs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#graphs</IRI>
+        <Literal xml:lang="en">Graphs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#host</IRI>
+        <Literal xml:lang="en">The host member specifies the host where the SEPA broker is running.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#host</IRI>
+        <Literal xml:lang="en">Host</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#jsap</IRI>
+        <Literal xml:lang="en">JSAP is used to describe an application based on the SPARQL Event Processing Architecure (SEPA) and folllowing the application design pattern named PAC (Producer-Aggregator-Consumer). A client assumes a different role depending on how it interacts with a SEPA broker.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#jsap</IRI>
+        <Literal xml:lang="en">JASON SPARQL Application Profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#method</IRI>
+        <Literal xml:lang="en">It specifies the HTTP or HTTPS method used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#namespaces</IRI>
+        <Literal xml:lang="en">JSAP may include a set of namespaces used b SPARQL updates and queries. Client_side APIs should take the namespace and prepend them to a SPARQL update/subscribe.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#namespaces</IRI>
+        <Literal xml:lang="en">Namespaces</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#oauth</IRI>
+        <Literal xml:lang="en">The oauth member allows to specify the Autorization Server URLs used to register a new client identity and request tokens.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#oauth</IRI>
+        <Literal xml:lang="en">Oauth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#path</IRI>
+        <Literal xml:lang="en">It may contain path part of the URL.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#port</IRI>
+        <Literal xml:lang="en">The port member specifies the port where the SEPA broker is listening for SPARQL 1.1. primitives (updates and queries).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#protocol</IRI>
+        <Literal xml:lang="en">The protocol member specifies the protocol used and it can assume the values: http or https.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#queries</IRI>
+        <Literal xml:lang="en">Queries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#queries</IRI>
+        <Literal xml:lang="en">The queries member contain a list of SPARQL 1.1 queries.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#queriesName</IRI>
+        <Literal xml:lang="en">It stays for the specific query name in a query list.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#query</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Query language contains capabilities for querying required and optional graph patterns along with their conjunctions and disjunctions.The results of SPARQL queries can be result sets or RDF graphs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#query</IRI>
+        <Literal xml:lang="en">Query</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparq11protocol</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Protocol decribes a means for conveying SPARQL queries and updates to a SPARQL processing service and returning the results via HTTP to the entity that requested them.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparq11protocol</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Protocol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparql</IRI>
+        <Literal xml:lang="en">it defines if the SPARQL action is a query or an update.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparql11seprotocol</IRI>
+        <Literal xml:lang="en">ThE SPARQL 1.1 SE Protocol wraps the SPARQL 1.1 Protocol to support subscriptions and secure connections.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparql11seprotocol</IRI>
+        <Literal xml:lang="en">SPARQL 1,1 Secure Event Protocol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#type</IRI>
+        <Literal xml:lang="en">Force binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#update</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Update is intended to be a standard language for specifying and executing updates to RDF graphs in a Graph Store.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#update</IRI>
+        <Literal xml:lang="en">Update</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#updates</IRI>
+        <Literal xml:lang="en">The updates member contain a list of SPARQL 1.1 updates.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#updates</IRI>
+        <Literal xml:lang="en">Updates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#updatesName</IRI>
+        <Literal xml:lang="en">It stays for the specific update name in an update list.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#value</IRI>
+        <Literal xml:lang="en">Forced binding value. It is optional and should be used to specify a default value for that variable.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
