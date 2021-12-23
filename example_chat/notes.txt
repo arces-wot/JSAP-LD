@@ -1,0 +1,20 @@
+#query ed update sullo stesso path
+sparql11protoco
+    scope: STRING
+    protocol: STRING
+	port: INT
+	path: STRING
+	method: STRING
+	format: STRING
+
+
+#query ed update NON sullo stesso path
+sparql11protoco/query EXSTEND sparql11protoco
+
+#query ed update NON sullo stesso path
+sparql11protoco/update EXSTEND sparql11protoco
+
+
+#subscriptions
+sparql11seprotocol EXSTEND sparql11protoco
+	reconnect: BOOL

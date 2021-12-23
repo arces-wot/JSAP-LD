@@ -1,15 +1,11 @@
 {
-"@context" : [
-     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",{
+"@context" :
+{
     "queries" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#queries"
     },
     "forcedBindings" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindings"
-    },
-    "hasAviaibleProtocols" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#hasAviaibleProtocols",
-      "@type" : "@id"
     },
     "sparql" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparql",
@@ -71,9 +67,6 @@
     "update" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#update"
     },
-    "aviaibleProtocols" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#aviaibleProtocols"
-    },
     "topObjectProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
       "@type" : "@id"
@@ -86,9 +79,6 @@
       "@id" : "http://www.vaimee.it/ontology/jsap#value",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
-    "sparql11seprotocol" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11seprotocol"
-    },
     "updatesName" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#updatesName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
@@ -96,9 +86,22 @@
     "port" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#port",
       "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },  
+    "protocols":{
+     "@id" : "http://www.vaimee.it/ontology/jsap#protocols",
+     "@type" : "@id"
     },
     "sparq11protocol" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol"
+    },
+    "sparq11protocol-query" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol-query"
+    },
+    "sparq11protocol-update" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol-update"
+    },
+    "sparql11seprotocol" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11seprotocol"
     },
     "oauth" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#oauth"
@@ -131,29 +134,55 @@
       "@id" : "http://www.vaimee.it/ontology/jsap#hasQuery",
       "@type" : "@id"
     }
-  }],
-"@id":"example_chat",
+  },
+"@id":"http://www.vaimee.it/jsapld/chat?version=0.1",
 "@type": "jsap",
 "host": "localhost",
 "oauth": {
 		"enable": false
-	},
-"sparql11protocol": {
-		"protocol": "http",
+},
+"protocols":[  
+  {
+    "@type":"sparql11protocol",
+    "protocol": "http",
 		"port": 8000,
-		"query": {
-			"path": "/query",
-			"method": "POST",
-			"format": "JSON"
-		},
-		"update": {
-			"path": "/update",
-			"method": "POST",
-			"format": "JSON"
-		}
-	},
+		"path": "/updateAndQuery",
+		"method": "POST",
+		"format": "JSON"
+  },
+  {
+    "@type":"sparql11protocol-query",
+    "protocol": "http",
+		"port": 8000,
+		"path": "/query",
+		"method": "POST",
+		"format": "JSON"
+  },
+  {
+    "@type":"sparql11protocol-update",
+    "protocol": "http",
+		"port": 8000,
+		"path": "/update",
+		"method": "POST",
+		"format": "JSON"
+  },
+  {
+    "@type":"sparql11seprotocol",
+    "protocol": "ws",
+		"port": 9000,
+		"path": "/subscribe",
+		"reconnect" : true
+  },
+  {
+    "@type":"sparql11seprotocol",
+    "protocol": "wss",
+		"port": 9443,
+		"path": "/secure/subscribe",
+		"reconnect" : true
+  }
+],
 "extended": {
-        "extendedType": "base",
+    "extendedType": "base",
 		"base": 0,
 		"clients": 2,
 		"messages": 5
@@ -173,8 +202,9 @@
 	},
 	"updates": [
 		{
-            "updatesName":"SEND",
-			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
+      "@id":"http://chat/send",
+      "@type":"update",
+			"sparql": 'INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}',
 			"forcedBindings": [
                  {
                     "forcedBindingName" :"text",
@@ -194,8 +224,9 @@
             ]
 		},
 		{
-            "updatesName":"SET_RECEIVED",
-			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {?message schema:dateReceived ?time}} WHERE {?message rdf:type schema:Message ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?sentTime .  BIND(STR(now()) AS ?time)}",
+      "@id":"http://chat/set_received",
+      "@type":"update",
+			"sparql": 'INSERT {graph <http://wot.arces.unibo.it/chat> {?message schema:dateReceived ?time}} WHERE {?message rdf:type schema:Message ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?sentTime .  BIND(STR(now()) AS ?time)}',
 			"forcedBindings": [
                  {
                     "forcedBindingName" :"sender",
@@ -215,8 +246,9 @@
             ]
 		},
         {
-            "updatesName":"REMOVE",
-			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?message ?p ?o}} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}",
+      "@id":"http://chat/remove",
+      "@type":"update",
+			"sparql": 'DELETE {graph <http://wot.arces.unibo.it/chat> {?message ?p ?o}} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}',
 			"forcedBindings": [
                  {
                     "forcedBindingName" :"sender",
@@ -231,8 +263,9 @@
             ]
 		},
         {
-            "updatesName":"STORE_SENT",
-			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}}",
+      "@id":"http://chat/store_sent",
+      "@type":"update",
+			"sparql": 'INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}}',
 			"forcedBindings": [
                  {
                     "forcedBindingName" :"dateSent",
@@ -263,8 +296,9 @@
             ]
 		},
          {
-            "updatesName":"STORE_RECEIVED",
-			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:dateReceived ?dateReceived}}",
+      "@id":"http://chat/store_received",
+      "@type":"update",
+			"sparql": 'INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:dateReceived ?dateReceived}}',
 			"forcedBindings": [
                 {
                     "forcedBindingName" :"dateReceived",
@@ -280,8 +314,9 @@
             ]
 		},
          {
-            "updatesName":"REGISTER_USER",
-			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?x rdf:type schema:Person . ?x schema:name ?userName}} INSERT {graph <http://wot.arces.unibo.it/chat> {?user rdf:type schema:Person ; schema:name ?userName}}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}",
+      "@id":"http://chat/register_user",
+      "@type":"update",
+			"sparql": 'DELETE {graph <http://wot.arces.unibo.it/chat> {?x rdf:type schema:Person . ?x schema:name ?userName}} INSERT {graph <http://wot.arces.unibo.it/chat> {?user rdf:type schema:Person ; schema:name ?userName}}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}',
 			"forcedBindings": [
                 {
                     "forcedBindingName" :"userName",
@@ -296,14 +331,16 @@
             ]
 		},
         {
-            "updatesName":"DELETE_ALL",
-			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?s ?p ?o}} WHERE {?s ?p ?o}"
+      "@id":"http://chat/delete_all",
+      "@type":"update",
+			"sparql": 'DELETE {graph <http://wot.arces.unibo.it/chat> {?s ?p ?o}} WHERE {?s ?p ?o}'
 		}
     ],
 	"queries": [
         { 
-            "queriesName":"SENT",
-			"sparql": "SELECT ?message ?sender ?name ?text ?time WHERE {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?time . ?sender rdf:type schema:Person ; schema:name ?name . ?receiver rdf:type schema:Person} ORDER BY ?time",
+      "@id":"http://chat/sent",
+      "@type":"query",
+			"sparql": 'SELECT ?message ?sender ?name ?text ?time WHERE {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?time . ?sender rdf:type schema:Person ; schema:name ?name . ?receiver rdf:type schema:Person} ORDER BY ?time',
 			"forcedBindings": [
                 {
                     "forcedBindingName" :"receiver",
@@ -313,8 +350,9 @@
             ]
 		},
         {
-            "queriesName":"RECEIVED",
-			"sparql": "SELECT ?message ?time WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message}",
+      "@id":"http://chat/received",
+      "@type":"query",
+			"sparql": 'SELECT ?message ?time WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message}',
 			"forcedBindings": [
 				{
                     "forcedBindingName" :"sender",
@@ -324,8 +362,9 @@
             ]
 		},
          {
-            "queriesName":"LOG_SENT",
-			"sparql": "SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}",
+      "@id":"http://chat/log_sent",
+      "@type":"query",
+			"sparql": 'SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}',
 			"graphs": {
 				"default-graph-uri": [
 					"http://wot.arces.unibo.it/chat/log"
@@ -333,8 +372,9 @@
 			}
 		},
         {
-            "queriesName":"LOG_RECEIVED",
-			"sparql": "SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}",
+      "@id":"http://chat/log_received",
+      "@type":"query",
+			"sparql": 'SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}',
 			"graphs": {
 				"default-graph-uri": [
 					"http://wot.arces.unibo.it/chat/log"
@@ -342,12 +382,14 @@
 			}
 		},
          {
-            "queriesName":"USERS",
-			"sparql": "SELECT ?user ?userName WHERE {?user rdf:type schema:Person ; schema:name ?userName}"
+      "@id":"http://chat/users",
+      "@type":"query",
+			"sparql": 'SELECT ?user ?userName WHERE {?user rdf:type schema:Person ; schema:name ?userName}'
 		},
          {
-            "queriesName":"QUERY_ALL",
-			"sparql": "SELECT * WHERE {?s ?p ?o}"
+      "@id":"http://chat/query_all",
+      "@type":"query",
+			"sparql": 'SELECT * WHERE {?s ?p ?o}'
 		}
     ]
 }
