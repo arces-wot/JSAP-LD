@@ -1,0 +1,90 @@
+{
+	"@context": [{"xsd":
+		{
+			"@id": "http://www.w3.org/2001/XMLSchema#"
+		},
+		"rdfs":
+		{
+			"@id": "http://www.w3.org/2000/01/rdf-schema#"
+		},
+		"jsap":
+		{
+			"@id": "http://www.vaimee.it/ontology/jsap#"
+		},
+		"JSAP":
+		{
+			"@id": "http://www.vaimee.it/ontology/jsap#JSAP"
+		},
+		"forcedBindings":
+		{
+			"@id": "jsap:hasForcedBindings",
+			"@container": "@set"
+		},
+		"LiteralForcedBinding":
+		{
+			"@id": "jsap:LiteralForcedBinding"
+		},
+		"UriForcedBinding":
+		{
+			"@id": "jsap:UriForcedBinding"
+		},
+		"name":
+		{
+			"@id": "jsap:forcedBindingName"
+		},
+		"default":
+		{
+			"@id": "jsap:forcedBindingDefaultValue"
+		},
+		"sparql":
+		{
+			"@id": "jsap:sparql",
+			"@type": "xsd:string"
+		},
+		"updates":
+		{
+			"@id": "jsap:updates",
+			"@container": "@set"
+		},
+		"label":
+		{
+			"@id": "rdfs:label"
+		}}
+		,{"chat" : {
+			"@id" : "http://www.vaimee.it/jsapld/chat"
+		}}
+		
+	],
+	"@id": "http://www.vaimee.it/jsapld/chat?version=0.1",
+	"@type": "JSAP",
+	"updates": [
+		{
+			"@id": "chat:SEND",
+			"label" : [
+				{"@value" : "Invia", "@language" : "it"},
+				{"@value" : "Send", "@language" : "en"}
+			],
+			"comment" : [
+				{"@value" : "Invia un messaggio \"text\" da parte di un \"sender\" ad un \"receiver\"", "@language" : "it"}
+			],
+			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
+			"forcedBindings": [
+				{
+					"@type": "LiteralForcedBinding",
+					"name": "text",
+					"default": "Ciao!"
+				},
+				{
+					"@type": "UriForcedBinding",
+					"name": "sender",
+					"default": "chat:IamASender"
+				},
+				{
+					"@type": "LiteralForcedBinding",
+					"name": "receiver",
+					"default": "chat:IamAReceiver"
+				}
+			]
+		}
+	]
+}
