@@ -38,19 +38,25 @@
         <Class IRI="#oauth"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#queries"/>
+        <Class IRI="#protocols"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#query"/>
+        <Class IRI="#queries"/>
     </Declaration>
     <Declaration>
         <Class IRI="#sparq11protocol"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#sparql11protocol_query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sparql11protocol_update"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#sparql11seprotocol"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#update"/>
+        <Class IRI="#subscription"/>
     </Declaration>
     <Declaration>
         <Class IRI="#updates"/>
@@ -71,10 +77,19 @@
         <ObjectProperty IRI="#hasQuery"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasSubscription"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasUpdate"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#madeBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#alias"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#authorization"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#enable"/>
@@ -116,6 +131,18 @@
         <DataProperty IRI="#updatesName"/>
     </Declaration>
     <SubClassOf>
+        <Class IRI="#aviaibleProtocols"/>
+        <Class IRI="#protocols"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sparq11protocol"/>
+        <Class IRI="#protocols"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sparql11seprotocol"/>
+        <Class IRI="#sparq11protocol"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ws"/>
         <Class IRI="#aviaibleProtocols"/>
     </SubClassOf>
@@ -144,6 +171,10 @@
         <Class IRI="#sparq11protocol"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubscription"/>
+        <Class IRI="#sparql11seprotocol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasUpdate"/>
         <Class IRI="#sparq11protocol"/>
     </ObjectPropertyDomain>
@@ -161,11 +192,15 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasQuery"/>
-        <Class IRI="#query"/>
+        <Class IRI="#sparql11protocol_query"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubscription"/>
+        <Class IRI="#subscription"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasUpdate"/>
-        <Class IRI="#update"/>
+        <Class IRI="#sparql11protocol_update"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#madeBy"/>
@@ -210,6 +245,14 @@
         </ObjectMinCardinality>
     </ObjectPropertyRange>
     <DataPropertyDomain>
+        <DataProperty IRI="#alias"/>
+        <Class IRI="#subscription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#authorization"/>
+        <Class IRI="#subscription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#enable"/>
         <Class IRI="#oauth"/>
     </DataPropertyDomain>
@@ -227,19 +270,19 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#format"/>
-        <Class IRI="#query"/>
+        <Class IRI="#sparql11protocol_query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#format"/>
-        <Class IRI="#update"/>
+        <Class IRI="#sparql11protocol_update"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#method"/>
-        <Class IRI="#query"/>
+        <Class IRI="#sparql11protocol_query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#method"/>
-        <Class IRI="#update"/>
+        <Class IRI="#sparql11protocol_update"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#path"/>
@@ -247,11 +290,11 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#path"/>
-        <Class IRI="#query"/>
+        <Class IRI="#protocols"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#path"/>
-        <Class IRI="#update"/>
+        <Class IRI="#sparq11protocol"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#port"/>
@@ -283,12 +326,24 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#sparql"/>
+        <Class IRI="#subscription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sparql"/>
         <Class IRI="#updates"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#updatesName"/>
         <Class IRI="#updates"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#alias"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#authorization"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#enable"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
@@ -349,7 +404,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#aviaibleProtocols</IRI>
-        <Literal xml:lang="en">Avaiaible Protocols</Literal>
+        <Literal xml:lang="en">Avaiaible SE Protocols</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -424,7 +479,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#jsap</IRI>
-        <Literal xml:lang="en">JASON SPARQL Application Profile</Literal>
+        <Literal xml:lang="en">JSON SPARQL Application Profile</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -467,9 +522,9 @@
         <Literal xml:lang="en">The protocol member specifies the protocol used and it can assume the values: http or https.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#queries</IRI>
-        <Literal xml:lang="en">Queries</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#protocols</IRI>
+        <Literal xml:lang="en">Protocols</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -477,19 +532,14 @@
         <Literal xml:lang="en">The queries member contain a list of SPARQL 1.1 queries.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#queries</IRI>
+        <Literal xml:lang="en">Queries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#queriesName</IRI>
         <Literal xml:lang="en">It stays for the specific query name in a query list.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#query</IRI>
-        <Literal xml:lang="en">SPARQL 1.1 Query language contains capabilities for querying required and optional graph patterns along with their conjunctions and disjunctions.The results of SPARQL queries can be result sets or RDF graphs.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#query</IRI>
-        <Literal xml:lang="en">Query</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -508,23 +558,38 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparql11protocol_query</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Query language contains capabilities for querying required and optional graph patterns along with their conjunctions and disjunctions.The results of SPARQL queries can be result sets or RDF graphs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparql11protocol_query</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 P_ Query</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparql11protocol_update</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Update is intended to be a standard language for specifying and executing updates to RDF graphs in a Graph Store.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparql11protocol_update</IRI>
+        <Literal xml:lang="en">SPQRQL 1.1 P_Update</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#sparql11seprotocol</IRI>
         <Literal xml:lang="en">ThE SPARQL 1.1 SE Protocol wraps the SPARQL 1.1 Protocol to support subscriptions and secure connections.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#sparql11seprotocol</IRI>
-        <Literal xml:lang="en">SPARQL 1,1 Secure Event Protocol</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#update</IRI>
-        <Literal xml:lang="en">SPARQL 1.1 Update is intended to be a standard language for specifying and executing updates to RDF graphs in a Graph Store.</Literal>
+        <Literal xml:lang="en">SPARQL 1.1 Secure Event Protocol</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#update</IRI>
-        <Literal xml:lang="en">Update</Literal>
+        <IRI>#subscription</IRI>
+        <Literal xml:lang="en">Subscription</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
