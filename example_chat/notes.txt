@@ -18,3 +18,11 @@ sparql11protoco/update EXSTEND sparql11protoco
 #subscriptions
 sparql11seprotocol EXSTEND sparql11protoco
 	reconnect: BOOL
+
+#updates	
+"protocol":{ // can has redefinition of the protocol just for that update
+"@type":"sparql11protocol-update",  //here can be just "sparql11protocol-update" or "sparql11protocol"
+
+#forcedBindings
+we are using @vocab to add prefix at forceBinding name.
+a forceBingind can has just @type and @value, no more terms (look at json-ld @value using)
