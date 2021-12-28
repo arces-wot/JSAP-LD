@@ -23,6 +23,9 @@ sparql11seprotocol EXSTEND sparql11protoco
 "protocol":{ // can has redefinition of the protocol just for that update
 "@type":"sparql11protocol-update",  //here can be just "sparql11protocol-update" or "sparql11protocol"
 
+
 #forcedBindings
 we are using @vocab to add prefix at forceBinding name.
 a forceBingind can has just @type and @value, no more terms (look at json-ld @value using)
+in questo modo nel RDF risultate otteniamo una tripla ben formata (json-ld standard).
+ALTERNATIVA: usare default invece di @value (non json-ld standard)

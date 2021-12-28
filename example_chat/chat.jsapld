@@ -212,7 +212,7 @@
 			"label":"visible name of the update (optional)",
 			"description":"description of the update (optional)",
       "sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
-			"protocol":{                          
+			"hasProtocol":{                          
         "@type":"sparql11protocol-update",
         "protocol": "http",
         "port": 8000,
@@ -224,7 +224,7 @@
       "forcedBindings":{
                 "text": {
                     "@value": "Ciao!",
-					          "@type": "xsd:dateTime"
+					          "@type": "xs:string"
 				        },
                 "sender": {
                     "@value": "chat:IamASender",
