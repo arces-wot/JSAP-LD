@@ -13,8 +13,33 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <Literal xml:lang="en">The JSON SPQRQL Application Profile Ontology (JSAP) is intended to describe semantically an application based on SPARQL Event Processing Architecture (SEPA) and following the application design pattern named PAC (Producer-Aggregator-Consumer).
+
+Finally, this work is strongly related to the realization of a JSAP for Linked Data (in JSON-LD rather than JSON). Therefore this first version of JSAP Ontology is meant to represent the JSAP in its basic parts and functioning and it does not include the description of Producer, Aggregator and Consumer and their interactions as well as representations of a more specific level, but it is expected to be done in future versions of this ontology.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+        <Literal xml:lang="en">JSAP: JSON SPARQL Application Profile Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://mml.arces.unibo.it/TR/jsap.html</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>https://github.com/arces-wot/JSAP-LD</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en">1.0</Literal>
+    </Annotation>
     <Declaration>
-        <Class IRI="#aviaibleProtocols"/>
+        <Class IRI="#LiteralForcedBinding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UriForcedBinding"/>
     </Declaration>
     <Declaration>
         <Class IRI="#extended"/>
@@ -24,9 +49,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#graphs"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#host"/>
     </Declaration>
     <Declaration>
         <Class IRI="#jsap"/>
@@ -47,6 +69,12 @@
         <Class IRI="#sparq11protocol"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#sparql11protocol-query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sparql11protocol-update"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#sparql11protocol_query"/>
     </Declaration>
     <Declaration>
@@ -56,28 +84,19 @@
         <Class IRI="#sparql11seprotocol"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#subscription"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#updates"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ws"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#wss"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAviaibleProtocols"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasForcedBindings"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasQuery"/>
+        <ObjectProperty IRI="#hasProtocolQuery"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSubscription"/>
+        <ObjectProperty IRI="#hasProtocolUpdate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasQuery"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasUpdate"/>
@@ -86,28 +105,25 @@
         <ObjectProperty IRI="#madeBy"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#alias"/>
+        <DataProperty IRI="#datatype"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#authorization"/>
+        <DataProperty IRI="#default"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#enable"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#forcedBindingName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#forcedBindingType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#forcedBindingValue"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#format"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#host"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#method"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#name"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#path"/>
@@ -119,45 +135,45 @@
         <DataProperty IRI="#protocol"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#queriesName"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#reconnect"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#sparql"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#updatesName"/>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#aviaibleProtocols"/>
-        <Class IRI="#protocols"/>
+        <Class IRI="#LiteralForcedBinding"/>
+        <Class IRI="#forcedBindings"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UriForcedBinding"/>
+        <Class IRI="#forcedBindings"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#sparq11protocol"/>
         <Class IRI="#protocols"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sparql11protocol-query"/>
+        <Class IRI="#sparq11protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sparql11protocol-update"/>
+        <Class IRI="#sparq11protocol"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#sparql11seprotocol"/>
-        <Class IRI="#sparq11protocol"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ws"/>
-        <Class IRI="#aviaibleProtocols"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#wss"/>
-        <Class IRI="#aviaibleProtocols"/>
+        <Class IRI="#protocols"/>
     </SubClassOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasUpdate"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAviaibleProtocols"/>
-        <Class IRI="#sparql11seprotocol"/>
-    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasForcedBindings"/>
         <Class IRI="#queries"/>
@@ -167,36 +183,48 @@
         <Class IRI="#updates"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProtocolQuery"/>
+        <Class IRI="#queries"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProtocolUpdate"/>
+        <Class IRI="#updates"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasQuery"/>
         <Class IRI="#sparq11protocol"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSubscription"/>
-        <Class IRI="#sparql11seprotocol"/>
+        <ObjectProperty IRI="#hasQuery"/>
+        <Class IRI="#sparql11protocol-query"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasUpdate"/>
         <Class IRI="#sparq11protocol"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUpdate"/>
+        <Class IRI="#sparql11protocol-update"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#madeBy"/>
         <Class IRI="#jsap"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAviaibleProtocols"/>
-        <Class IRI="#aviaibleProtocols"/>
-    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasForcedBindings"/>
         <Class IRI="#forcedBindings"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasQuery"/>
-        <Class IRI="#sparql11protocol_query"/>
+        <ObjectProperty IRI="#hasProtocolQuery"/>
+        <Class IRI="#sparql11protocol-query"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSubscription"/>
-        <Class IRI="#subscription"/>
+        <ObjectProperty IRI="#hasProtocolUpdate"/>
+        <Class IRI="#sparql11protocol-update"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasQuery"/>
+        <Class IRI="#sparql11protocol_query"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasUpdate"/>
@@ -212,10 +240,6 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#madeBy"/>
-        <Class IRI="#host"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#madeBy"/>
         <Class IRI="#namespaces"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -224,11 +248,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#madeBy"/>
-        <Class IRI="#sparq11protocol"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#madeBy"/>
-        <Class IRI="#sparql11seprotocol"/>
+        <Class IRI="#protocols"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#madeBy"/>
@@ -245,28 +265,36 @@
         </ObjectMinCardinality>
     </ObjectPropertyRange>
     <DataPropertyDomain>
-        <DataProperty IRI="#alias"/>
-        <Class IRI="#subscription"/>
+        <DataProperty IRI="#datatype"/>
+        <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#authorization"/>
-        <Class IRI="#subscription"/>
+        <DataProperty IRI="#default"/>
+        <Class IRI="#LiteralForcedBinding"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#default"/>
+        <Class IRI="#UriForcedBinding"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#default"/>
+        <Class IRI="#forcedBindings"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#enable"/>
         <Class IRI="#oauth"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#forcedBindingName"/>
-        <Class IRI="#forcedBindings"/>
+        <DataProperty IRI="#format"/>
+        <Class IRI="#sparq11protocol"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#forcedBindingType"/>
-        <Class IRI="#forcedBindings"/>
+        <DataProperty IRI="#format"/>
+        <Class IRI="#sparql11protocol-query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#forcedBindingValue"/>
-        <Class IRI="#forcedBindings"/>
+        <DataProperty IRI="#format"/>
+        <Class IRI="#sparql11protocol-update"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#format"/>
@@ -277,28 +305,84 @@
         <Class IRI="#sparql11protocol_update"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#method"/>
-        <Class IRI="#sparql11protocol_query"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#method"/>
-        <Class IRI="#sparql11protocol_update"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#path"/>
-        <Class IRI="#aviaibleProtocols"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#path"/>
+        <DataProperty IRI="#host"/>
         <Class IRI="#protocols"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#host"/>
+        <Class IRI="#sparq11protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#host"/>
+        <Class IRI="#sparql11protocol-query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#host"/>
+        <Class IRI="#sparql11protocol-update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#host"/>
+        <Class IRI="#sparql11seprotocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#method"/>
+        <Class IRI="#sparq11protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#method"/>
+        <Class IRI="#sparql11protocol-query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#method"/>
+        <Class IRI="#sparql11protocol-update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#method"/>
+        <Class IRI="#sparql11protocol_query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#method"/>
+        <Class IRI="#sparql11protocol_update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#LiteralForcedBinding"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#UriForcedBinding"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#forcedBindings"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#path"/>
         <Class IRI="#sparq11protocol"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#path"/>
+        <Class IRI="#sparql11protocol-query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#path"/>
+        <Class IRI="#sparql11protocol-update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#path"/>
+        <Class IRI="#sparql11seprotocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#port"/>
         <Class IRI="#sparq11protocol"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#port"/>
+        <Class IRI="#sparql11protocol-query"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#port"/>
+        <Class IRI="#sparql11protocol-update"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#port"/>
@@ -310,11 +394,15 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#protocol"/>
-        <Class IRI="#sparql11seprotocol"/>
+        <Class IRI="#sparql11protocol-query"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#queriesName"/>
-        <Class IRI="#queries"/>
+        <DataProperty IRI="#protocol"/>
+        <Class IRI="#sparql11protocol-update"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#protocol"/>
+        <Class IRI="#sparql11seprotocol"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#reconnect"/>
@@ -326,22 +414,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#sparql"/>
-        <Class IRI="#subscription"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#sparql"/>
-        <Class IRI="#updates"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#updatesName"/>
         <Class IRI="#updates"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#alias"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#authorization"/>
+        <DataProperty IRI="#default"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -349,24 +425,20 @@
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#forcedBindingName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#forcedBindingType"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#forcedBindingValue"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#format"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#host"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#method"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#name"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#path"/>
@@ -381,10 +453,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#queriesName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#reconnect"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
@@ -392,49 +460,65 @@
         <DataProperty IRI="#sparql"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#updatesName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#aviaibleProtocols</IRI>
-        <Literal xml:lang="en">It defines the aviaible protocols for a SPARQL 1.1 SE Protocol</Literal>
+        <IRI>#LiteralForcedBinding</IRI>
+        <Literal xml:lang="en">A Literal Forced Binding is a forced binding described as literal type.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#aviaibleProtocols</IRI>
-        <Literal xml:lang="en">Avaiaible SE Protocols</Literal>
+        <IRI>#LiteralForcedBinding</IRI>
+        <Literal xml:lang="en">Literal Forced Binding</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UriForcedBinding</IRI>
+        <Literal xml:lang="en">An URI forced binding is a forced binding described in an URI.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UriForcedBinding</IRI>
+        <Literal xml:lang="en">URI Forced Binding</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#datatype</IRI>
+        <Literal xml:lang="en">Forced binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#datatype</IRI>
+        <Literal xml:lang="en">datatype</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#default</IRI>
+        <Literal xml:lang="en">Forced binding value. It is optional and should be used to specify a default value for that variable.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#default</IRI>
+        <Literal xml:lang="en">default</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#enable</IRI>
-        <Literal xml:lang="en">it is used for the oauth member enabling.</Literal>
+        <Literal xml:lang="en">It is used for the oauth member enabling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#enable</IRI>
+        <Literal xml:lang="en">enable</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#extended</IRI>
-        <Literal xml:lang="en">The extended member is optional and it may be used to store application specifica data.</Literal>
+        <Literal xml:lang="en">The extended member is optional and it may be used to store application specific data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#extended</IRI>
         <Literal xml:lang="en">Extended</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#forcedBindingName</IRI>
-        <Literal xml:lang="en">Name of a forced binding.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#forcedBindingType</IRI>
-        <Literal xml:lang="en">Force binding type.It must be one of &quot;uri&quot;, &quot;bnode&quot;, &quot;literal&quot;.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#forcedBindingValue</IRI>
-        <Literal xml:lang="en">Forced binding value. It is optional and should be used to specify a default value for that variable.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -444,12 +528,17 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#forcedBindings</IRI>
-        <Literal xml:lang="en">Forced binding</Literal>
+        <Literal xml:lang="en">Forced Binding</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#format</IRI>
         <Literal xml:lang="en">It expresses the format of the response. All the SEPA implementations must support JSON as return format, while other formats like XML,CSV or HTML may be supported.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#format</IRI>
+        <Literal xml:lang="en">format</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -469,22 +558,37 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#host</IRI>
-        <Literal xml:lang="en">Host</Literal>
+        <Literal xml:lang="en">host</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#jsap</IRI>
-        <Literal xml:lang="en">JSAP is used to describe an application based on the SPARQL Event Processing Architecure (SEPA) and folllowing the application design pattern named PAC (Producer-Aggregator-Consumer). A client assumes a different role depending on how it interacts with a SEPA broker.</Literal>
+        <Literal xml:lang="en">JSAP (JSON SPARQL Application Profile) is used to describe an application based on the SPARQL Event Processing Architecure (SEPA) and folllowing the application design pattern named PAC (Producer-Aggregator-Consumer). A client assumes a different role depending on how it interacts with a SEPA broker.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#jsap</IRI>
-        <Literal xml:lang="en">JSON SPARQL Application Profile</Literal>
+        <Literal xml:lang="en">JSAP</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#method</IRI>
         <Literal xml:lang="en">It specifies the HTTP or HTTPS method used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#method</IRI>
+        <Literal xml:lang="en">method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#name</IRI>
+        <Literal xml:lang="en">Name of a forced binding.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#name</IRI>
+        <Literal xml:lang="en">name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -512,14 +616,29 @@
         <Literal xml:lang="en">It may contain path part of the URL.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#path</IRI>
+        <Literal xml:lang="en">path</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#port</IRI>
         <Literal xml:lang="en">The port member specifies the port where the SEPA broker is listening for SPARQL 1.1. primitives (updates and queries).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#port</IRI>
+        <Literal xml:lang="en">port</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#protocol</IRI>
         <Literal xml:lang="en">The protocol member specifies the protocol used and it can assume the values: http or https.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#protocol</IRI>
+        <Literal xml:lang="en">protocol</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -537,9 +656,9 @@
         <Literal xml:lang="en">Queries</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#queriesName</IRI>
-        <Literal xml:lang="en">It stays for the specific query name in a query list.</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reconnect</IRI>
+        <Literal xml:lang="en">reconnect</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -554,7 +673,32 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#sparql</IRI>
-        <Literal xml:lang="en">it defines if the SPARQL action is a query or an update.</Literal>
+        <Literal xml:lang="en">It defines if the SPARQL action is a query or an update.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparql</IRI>
+        <Literal xml:lang="en">sparql</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparql11protocol-query</IRI>
+        <Literal xml:lang="en">This class represents the SPARQL 1.1 Protocol closely related to query tasks.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparql11protocol-query</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Protocol-Query</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparql11protocol-update</IRI>
+        <Literal xml:lang="en">This class represents the SPARQL 1.1 Protocol closely related to update tasks.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparql11protocol-update</IRI>
+        <Literal xml:lang="en">SPARQL 1.1 Protocol-Update</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -564,7 +708,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#sparql11protocol_query</IRI>
-        <Literal xml:lang="en">SPARQL 1.1 P_ Query</Literal>
+        <Literal xml:lang="en">Query</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -574,7 +718,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#sparql11protocol_update</IRI>
-        <Literal xml:lang="en">SPQRQL 1.1 P_Update</Literal>
+        <Literal xml:lang="en">Update</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -587,11 +731,6 @@
         <Literal xml:lang="en">SPARQL 1.1 Secure Event Protocol</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#subscription</IRI>
-        <Literal xml:lang="en">Subscription</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#updates</IRI>
         <Literal xml:lang="en">The updates member contain a list of SPARQL 1.1 updates.</Literal>
@@ -600,11 +739,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#updates</IRI>
         <Literal xml:lang="en">Updates</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#updatesName</IRI>
-        <Literal xml:lang="en">It stays for the specific update name in an update list.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
