@@ -87,6 +87,9 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
         <Class IRI="#updates"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#extends"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasForcedBindings"/>
     </Declaration>
     <Declaration>
@@ -175,6 +178,10 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#extends"/>
+        <Class IRI="#sparql11seprotocol"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasForcedBindings"/>
         <Class IRI="#queries"/>
     </ObjectPropertyDomain>
@@ -211,12 +218,24 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
         <Class IRI="#jsap"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#extends"/>
+        <Class IRI="#sparq11protocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasForcedBindings"/>
         <Class IRI="#forcedBindings"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasProtocolQuery"/>
+        <Class IRI="#sparq11protocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProtocolQuery"/>
         <Class IRI="#sparql11protocol-query"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProtocolUpdate"/>
+        <Class IRI="#sparq11protocol"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasProtocolUpdate"/>
@@ -519,6 +538,11 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#extended</IRI>
         <Literal xml:lang="en">Extended</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#extends</IRI>
+        <Literal xml:lang="en">The SPARQL 1.1 SE Protocol extends and wraps the SPARQL 1.1 Protocol supporting subscriptions and secure connections.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
