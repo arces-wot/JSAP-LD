@@ -191,27 +191,19 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasProtocolQuery"/>
-        <Class IRI="#queries"/>
+        <Class IRI="#sparql11protocol_query"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasProtocolUpdate"/>
+        <Class IRI="#sparql11protocol_update"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasQuery"/>
+        <Class IRI="#queries"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUpdate"/>
         <Class IRI="#updates"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasQuery"/>
-        <Class IRI="#sparq11protocol"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasQuery"/>
-        <Class IRI="#sparql11protocol-query"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasUpdate"/>
-        <Class IRI="#sparq11protocol"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasUpdate"/>
-        <Class IRI="#sparql11protocol-update"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#madeBy"/>
@@ -232,6 +224,10 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasProtocolQuery"/>
         <Class IRI="#sparql11protocol-query"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProtocolQuery"/>
+        <Class IRI="#sparql11seprotocol"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasProtocolUpdate"/>
