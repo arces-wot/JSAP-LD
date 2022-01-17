@@ -1,23 +1,17 @@
 {
-"@context" :
-{
+  "@context" : {
     "@vocab":"http://www.vaimee.it/ontology/jsap/",
     "queries" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#queries"
+      "@id" : "http://www.vaimee.it/ontology/jsap#queries",
+      "@container": "@set"
     },
-    "forcedBindings":
-		{
-			"@id": "http://www.vaimee.it/ontology/jsap#forcedBindings",
-			"@container": "@set"
-		},
-		"LiteralForcedBinding":
-		{
-			"@id": "http://www.vaimee.it/ontology/jsap#LiteralForcedBinding"
-		},
-		"UriForcedBinding":
-		{
-			"@id": "http://www.vaimee.it/ontology/jsap#UriForcedBinding"
-		},
+    "forcedBindings" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindings",
+      "@container": "@set"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
     "sparql" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparql",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
@@ -30,28 +24,32 @@
       "@id" : "http://www.vaimee.it/ontology/jsap#protocol",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "sparql11protocol_update" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol_update"
+    },
     "graphs" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#graphs",
-			"@container": "@set"
-    },
-    "forceBindingType" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#forceBindingType",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@container": "@set"
     },
     "extended" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#extended",
-			"@container": "@set"
+      "@container": "@set"
     },
     "host" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#host"
+      "@id" : "http://www.vaimee.it/ontology/jsap#host",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "updates" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#updates",
-			"@container": "@set"
+      "@container": "@set"
+    },
+    "hasProtocolUpdate" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasProtocolUpdate",
+      "@type" : "@id"
     },
     "jsap" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#jsap",
-			"@container": "@set"
+      "@container": "@set"
     },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
@@ -59,10 +57,6 @@
     "method" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#method",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "query" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#query",
-			"@container": "@set"
     },
     "hasUpdate" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#hasUpdate",
@@ -72,71 +66,86 @@
       "@id" : "http://www.vaimee.it/ontology/jsap#path",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "hasForcedBindings" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasForcedBindings",
+      "@type" : "@id"
+    },
+    "UriForcedBinding" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#UriForcedBinding"
+    },
     "enable" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#enable",
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
     },
-    "update" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#update"
+    "sparql11protocol-update" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol-update"
+    },
+    "extends" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#extends",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#name",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "topObjectProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
       "@type" : "@id"
     },
-    "queriesName" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#queriesName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    "protocols" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#protocols"
     },
-    "value" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#value",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "updatesName" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#updatesName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "port" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#port",
-      "@type" : "http://www.w3.org/2001/XMLSchema#int"
-    },  
-    "protocols":{
-     "@id" : "http://www.vaimee.it/ontology/jsap#protocols",
-     "@type" : "@id"
-    },
-    "sparq11protocol" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol"
-    },
-    "sparq11protocol-query" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol-query"
-    },
-    "sparq11protocol-update" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol-update"
+    "LiteralForcedBinding" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#LiteralForcedBinding"
     },
     "sparql11seprotocol" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparql11seprotocol"
     },
+    "port" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#port",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "sparq11protocol" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
     "oauth" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#oauth"
+    },
+    "sparql11protocol_query" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol_query"
     },
     "namespaces" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#namespaces"
     },
-    "wss" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#wss"
+    "datatype" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#datatype"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "sparql11protocol-query" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol-query"
+    },
+    "hasProtocolQuery" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasProtocolQuery",
+      "@type" : "@id"
     },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
-    "forcedBindingsName" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindingsName",
+    "default" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#default",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "ws" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#ws"
     },
     "madeBy" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#madeBy",
       "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
     },
     "format" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#format",
@@ -145,20 +154,8 @@
     "hasQuery" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#hasQuery",
       "@type" : "@id"
-    },
-    "dataType" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#dataType",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "name" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#name",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "default" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#default",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     }
-  },
+},
 "@id":"http://www.vaimee.it/jsapld/chat?version=0.1",
 "@type": "jsap",
 "oauth": {
@@ -166,6 +163,7 @@
 },
 "protocols":[  
   {
+    "@id":"http://chat/protocol_01",
     "@type":"sparql11protocol",
     "protocol": "http",
 		"port": 8000,
@@ -175,6 +173,7 @@
     "host": "localhost"
   },
   {
+    "@id":"http://chat/protocol_02",
     "@type":"sparql11protocol-query",
     "protocol": "http",
 		"port": 8000,
@@ -184,6 +183,7 @@
     "host": "localhost"
   },
   {
+    "@id":"http://chat/protocol_03",
     "@type":"sparql11protocol-update",
     "protocol": "http",
 		"port": 8000,
@@ -193,6 +193,7 @@
     "host": "localhost"
   },
   {
+    "@id":"http://chat/protocol_04",
     "@type":"sparql11seprotocol",
     "protocol": "ws",
 		"port": 9000,
@@ -201,12 +202,23 @@
     "host": "localhost"
   },
   {
+    "@id":"http://chat/protocol_05",
     "@type":"sparql11seprotocol",
     "protocol": "wss",
 		"port": 9443,
 		"path": "/secure/subscribe",
 		"reconnect" : true,
     "host": "localhost"
+  },
+  {
+    "@id":"http://chat/protocol_06",
+    "@type":"sparql11protocol-update",
+    "protocol": "http",
+    "port": 8000,
+    "path": "/update",
+    "method": "POST",
+    "format": "JSON",
+    "host": "www.anotherhost.com"
   }
 ],
 "extended": {
@@ -235,15 +247,7 @@
 			"label":"visible name of the update (optional)",
 			"description":"description of the update (optional)",
       "sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
-			"hasProtocol":{
-        "@type":"sparql11protocol-update",
-        "protocol": "http",
-        "port": 8000,
-        "path": "/update",
-        "method": "POST",
-        "format": "JSON",
-        "host": "www.anotherhost.com"
-      },
+			"hasProtocolUpdate":"http://chat/protocol_06",
       "forcedBindings":[
                 {
                   "@type": "LiteralForcedBinding",
@@ -265,6 +269,7 @@
 		},
 		{
       "@id":"http://chat/set_received",
+      "hasProtocolUpdate":"http://chat/protocol_03",
       "@type":"update",
 			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {?message schema:dateReceived ?time}} WHERE {?message rdf:type schema:Message ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?sentTime .  BIND(STR(now()) AS ?time)}",
 			"forcedBindings":[
@@ -288,6 +293,7 @@
 		},
         {
       "@id":"http://chat/remove",
+      "hasProtocolUpdate":"http://chat/protocol_03",
       "@type":"update",
 			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?message ?p ?o}} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}",
 			"forcedBindings": 
@@ -307,6 +313,7 @@
 		},
         {
       "@id":"http://chat/store_sent",
+      "hasProtocolUpdate":"http://chat/protocol_03",
       "@type":"update",
 			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}}",
 			"forcedBindings": 
@@ -341,6 +348,7 @@
 		},
          {
       "@id":"http://chat/store_received",
+      "hasProtocolUpdate":"http://chat/protocol_03",
       "@type":"update",
 			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:dateReceived ?dateReceived}}",
 			"forcedBindings": 
@@ -360,6 +368,7 @@
 		},
          {
       "@id":"http://chat/register_user",
+      "hasProtocolUpdate":"http://chat/protocol_03",
       "@type":"update",
 			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?x rdf:type schema:Person . ?x schema:name ?userName}} INSERT {graph <http://wot.arces.unibo.it/chat> {?user rdf:type schema:Person ; schema:name ?userName}}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}",
 			"forcedBindings":
@@ -378,6 +387,7 @@
 		},
         {
       "@id":"http://chat/delete_all",
+      "hasProtocolUpdate":"http://chat/protocol_03",
       "@type":"update",
 			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?s ?p ?o}} WHERE {?s ?p ?o}"
 		}
@@ -385,6 +395,7 @@
 	"queries": [
         { 
       "@id":"http://chat/sent",
+      "hasProtocolQuery":"http://chat/protocol_02",
       "@type":"query",
 			"sparql": "SELECT ?message ?sender ?name ?text ?time WHERE {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?time . ?sender rdf:type schema:Person ; schema:name ?name . ?receiver rdf:type schema:Person} ORDER BY ?time",
 			"forcedBindings":
@@ -398,6 +409,7 @@
 		},
         {
       "@id":"http://chat/received",
+      "hasProtocolQuery":"http://chat/protocol_02",
       "@type":"query",
 			"sparql": "SELECT ?message ?time WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message}",
 			"forcedBindings": 
@@ -411,6 +423,7 @@
 		},
          {
       "@id":"http://chat/log_sent",
+      "hasProtocolQuery":"http://chat/protocol_02",
       "@type":"query",
 			"sparql": "SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}",
 			"graphs": {
@@ -421,6 +434,7 @@
 		},
         {
       "@id":"http://chat/log_received",
+      "hasProtocolQuery":"http://chat/protocol_02",
       "@type":"query",
 			"sparql": "SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}",
 			"graphs": {
@@ -431,11 +445,13 @@
 		},
          {
       "@id":"http://chat/users",
+      "hasProtocolQuery":"http://chat/protocol_02",
       "@type":"query",
 			"sparql": "SELECT ?user ?userName WHERE {?user rdf:type schema:Person ; schema:name ?userName}"
 		},
          {
       "@id":"http://chat/query_all",
+      "hasProtocolQuery":"http://chat/protocol_02",
       "@type":"query",
 			"sparql": "SELECT * WHERE {?s ?p ?o}"
 		}

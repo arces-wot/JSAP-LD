@@ -1,14 +1,16 @@
 {
   "@context" : {
+    "@vocab":"http://www.vaimee.it/ontology/jsap/",
     "queries" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#queries"
+      "@id" : "http://www.vaimee.it/ontology/jsap#queries",
+      "@container": "@set"
     },
     "forcedBindings" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindings"
+      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindings",
+      "@container": "@set"
     },
-    "hasAviaibleProtocols" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#hasAviaibleProtocols",
-      "@type" : "@id"
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
     "sparql" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparql",
@@ -22,24 +24,32 @@
       "@id" : "http://www.vaimee.it/ontology/jsap#protocol",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
-    "graphs" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#graphs"
+    "sparql11protocol_update" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol_update"
     },
-    "forceBindingType" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#forceBindingType",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    "graphs" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#graphs",
+      "@container": "@set"
     },
     "extended" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#extended"
+      "@id" : "http://www.vaimee.it/ontology/jsap#extended",
+      "@container": "@set"
     },
     "host" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#host"
+      "@id" : "http://www.vaimee.it/ontology/jsap#host",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "updates" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#updates"
+      "@id" : "http://www.vaimee.it/ontology/jsap#updates",
+      "@container": "@set"
+    },
+    "hasProtocolUpdate" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasProtocolUpdate",
+      "@type" : "@id"
     },
     "jsap" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#jsap"
+      "@id" : "http://www.vaimee.it/ontology/jsap#jsap",
+      "@container": "@set"
     },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
@@ -47,9 +57,6 @@
     "method" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#method",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "query" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#query"
     },
     "hasUpdate" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#hasUpdate",
@@ -63,30 +70,36 @@
       "@id" : "http://www.vaimee.it/ontology/jsap#hasForcedBindings",
       "@type" : "@id"
     },
+    "UriForcedBinding" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#UriForcedBinding"
+    },
     "enable" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#enable",
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
     },
-    "update" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#update"
+    "sparql11protocol-update" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol-update"
     },
-    "aviaibleProtocols" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#aviaibleProtocols"
+    "extends" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#extends",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#name",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "topObjectProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
       "@type" : "@id"
     },
-    "queriesName" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#queriesName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    "protocols" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#protocols"
+    },
+    "LiteralForcedBinding" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#LiteralForcedBinding"
     },
     "sparql11seprotocol" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparql11seprotocol"
-    },
-    "updatesName" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#updatesName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "port" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#port",
@@ -95,32 +108,44 @@
     "sparq11protocol" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#sparq11protocol"
     },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
     "oauth" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#oauth"
+    },
+    "sparql11protocol_query" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol_query"
     },
     "namespaces" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#namespaces"
     },
-    "wss" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#wss"
+    "datatype" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#datatype"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "sparql11protocol-query" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#sparql11protocol-query"
+    },
+    "hasProtocolQuery" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#hasProtocolQuery",
+      "@type" : "@id"
     },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
-    "forcedBindingsName" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#forcedBindingsName",
+    "default" : {
+      "@id" : "http://www.vaimee.it/ontology/jsap#default",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "forceBindingValue" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#forceBindingValue",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "ws" : {
-      "@id" : "http://www.vaimee.it/ontology/jsap#ws"
     },
     "madeBy" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#madeBy",
       "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
     },
     "format" : {
       "@id" : "http://www.vaimee.it/ontology/jsap#format",
