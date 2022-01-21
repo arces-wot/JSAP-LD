@@ -267,17 +267,11 @@ Finally, this work is strongly related to the realization of a JSAP for Linked D
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#madeBy"/>
-        <ObjectMinCardinality cardinality="0">
-            <ObjectProperty IRI="#madeBy"/>
-            <Class IRI="#queries"/>
-        </ObjectMinCardinality>
+        <Class IRI="#queries"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#madeBy"/>
-        <ObjectMinCardinality cardinality="0">
-            <ObjectProperty IRI="#madeBy"/>
-            <Class IRI="#updates"/>
-        </ObjectMinCardinality>
+        <Class IRI="#updates"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#datatype"/>
