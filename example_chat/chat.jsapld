@@ -250,20 +250,23 @@
 			"hasProtocolUpdate":"http://chat/protocol_06",
       "forcedBindings":[
                 {
+                  "@id":"http://chat/fb/msg",
                   "@type": "LiteralForcedBinding",
                   "name": "text",
                   "default": "Ciao!",
                   "dataType" : "xs:string"
                 },
                 {
+                  "@id":"http://chat/fb/sender",
                   "@type": "UriForcedBinding",
                   "name": "sender",
                   "default": "chat:IamASender"
                 },
                 {
+                  "@id":"http://chat/fb/receiver",
                   "@type": "UriForcedBinding",
                   "name": "receiver",
-                  "default": "chat:IamASender"
+                  "default": "chat:IamAReceiver"
                 }
       ]   
 		},
@@ -287,7 +290,7 @@
                 {
                   "@type": "UriForcedBinding",
                   "name": "receiver",
-                  "default": "chat:IamASender"
+                  "default": "chat:IamARecevier"
                 }
       ]
 		},
@@ -332,7 +335,7 @@
                 {
                   "@type": "UriForcedBinding",
                   "name": "receiver",
-                  "default": "chat:IamASender"
+                  "default": "chat:IamARecevier"
                 },
                 {
                   "@type": "LiteralForcedBinding",
@@ -403,7 +406,7 @@
                {
                   "@type": "UriForcedBinding",
                   "name": "receiver",
-                  "default": "chat:IamASender"
+                  "default": "chat:IamARecevier"
                 }
         ]
 		},
@@ -416,7 +419,7 @@
         [
                {
                   "@type": "UriForcedBinding",
-                  "name": "recesenderiver",
+                  "name": "sender",
                   "default": "chat:IamASender"
                 }
         ]
